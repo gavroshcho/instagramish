@@ -2,12 +2,17 @@
   <div class="header">
     <p class="greeting">Hello, <strong><%= current_user.name %></strong>, welcome to Instagramish</p>
     <p class="sign-out"><%= link_to "Sign out", signout_path, id: "sign_out" %></p>
-    <p class="create-post"><%= link_to "Create new post", new_posts_path %></p>
+    <p class="create-post"><%= link_to "Create new post", new_post_path %></p>
   </div>
   
   <div class="posts">
     <% @posts.each do |post| %>
-      <p class="post"> <%= image_tag post.avatars[0].url %></p>
+      <div class="post"> 
+        <p> <%= post.user.name %></p>
+        <%= image_tag post.avatars[0].url %>
+        <%= render partial: "comments/index", locals: { post: post  }%>
+        <%= render partial: "comments/new", locals: { post: post }%>
+      </div>
     <% end %>
   </div>
 <% end %>

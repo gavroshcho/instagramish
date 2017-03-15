@@ -8,12 +8,8 @@ class PostsController < ApplicationController
   def new
   end
 
-  def show
-
-  end
-
   def create
-    @post = current_user.posts.create(posts_params)
+    @post = current_user.posts.create(post_params)
     if @post.save
       redirect_to root_path
     else
@@ -23,7 +19,7 @@ class PostsController < ApplicationController
 
   private
 
-  def posts_params
+  def post_params
     params.require(:post).permit({avatars: []})
   end
 end

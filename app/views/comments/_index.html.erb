@@ -1,0 +1,7 @@
+<% unless post.comments.empty? %>
+  <% post.comments.each do |comment| %>
+    <p class="comment"><strong><%= comment.user.name if comment.user %>: </strong><%= comment.body%></p>
+  <% end %>
+<% else %>
+  <p>No comments yet</p>
+<% end %>

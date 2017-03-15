@@ -1,9 +1,14 @@
 <% if current_user %>
-  <p class="greeting">Hello, <strong><%= current_user.name %></strong>, welcome to Instagramish</p>
-  <p class="sign-out"><%= link_to "Sign out", signout_path, id: "sign_out" %></p>
-<% else %>
-  <div class="login-btns">
-    <p class="google-par"><%= link_to "Sign in with Google +", "/auth/google_oauth2", id: "sign_in",class: "google-btn" %></p>
-    <p><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "facebook-btn" %></p>
+  <div class="header">
+    <p class="greeting">Hello, <strong><%= current_user.name %></strong>, welcome to Instagramish</p>
+    <p class="sign-out"><%= link_to "Sign out", signout_path, id: "sign_out" %></p>
+    <p class="create-post"><%= link_to "Create new post", new_posts_path %></p>
+  </div>
+  
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <p class="post"> <%= image_tag post.avatars[0].url %></p>
+    <% end %>
   </div>
 <% end %>
+

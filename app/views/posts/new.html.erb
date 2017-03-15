@@ -1,0 +1,5 @@
+<h2> Upload your photo </h2>
+<%= form_for :post, url: posts_path do |f| %>
+  <%= f.file_field :avatars, multiple: true %>
+  <%= f.submit %>
+<% end %>

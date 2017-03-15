@@ -22,6 +22,14 @@
   margin: 0 auto;
 }
 
+.posts {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 100px;
+}
 #sign_in {
   padding: 10px;
   text-decoration: none;
@@ -34,4 +42,21 @@
 
 .sign-out {
   float: right;
+}
+
+.create-post {
+  margin-right: 10px;
+  float: right;
+}
+
+.post {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+  border: 1px solid black;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
 }
